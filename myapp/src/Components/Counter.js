@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
 function Counter(props) {
-   let [counter,setCounter] =useState(0)
+   let [counter,setCounter] =useState(props.min)
+   let [msg,setMsg]=useState("Hello")
 
    //setCounter=(newval)=>{counter=newval}
     let increment=()=>{
@@ -24,8 +25,17 @@ function Counter(props) {
             <button onClick={decrement}>-</button>
             <span>{counter}</span>
             <button onClick={increment}>+</button>
+            <p>{msg}</p>
+            <button onClick={()=>{setMsg(msg+"!")}}>Change msg</button>
         </div>
     );
 }
 
 export default Counter;
+
+/*useState(initialval){
+
+    let counter=initialval
+    return [counter,(newval)=>{counter=newval}]
+
+}*/

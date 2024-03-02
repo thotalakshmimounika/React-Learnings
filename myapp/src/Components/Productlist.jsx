@@ -7,6 +7,7 @@ function Productlist(props) {
     const [productlist,setProductlist]=useState(products)
 
     let productitems=productlist.map((product)=><Productitem prod_item={product}/>)
+   
     return (
         <div>
             {productitems}
